@@ -1,6 +1,6 @@
 import { client } from '../libs/client'
 import type { Blog } from '../src/type/blog'
-import styles from '../styles/Home.module.css'
+import { Header } from '../src/components/header'
 
 // SSG
 export const getStaticProps = async () => {
@@ -18,7 +18,8 @@ type Props = {
 
 export default function Home({ blogs }: Props) {
   return (
-    <div className='wrapper'>
+    <div className='wrapper bg-bg text-text'>
+      <Header></Header>
       {blogs.map((blog) => (
         <div key={blog.id}>
           <p>{blog.title}</p>
