@@ -1,6 +1,7 @@
 import { client } from '../libs/client'
 import type { Blog } from '../src/type/blog'
 import { Header } from '../src/components/header'
+import { Footer } from '../src/components/footer'
 import { KeyVisual } from '../src/components/keyvisual'
 
 // SSG
@@ -29,6 +30,7 @@ export default function Home({ blogs }: Props) {
           <img src={blog.thumbnail.url} alt={blog.title} />
         </div>
       ))}
+      <Footer></Footer>
     </div>
   )
 }
