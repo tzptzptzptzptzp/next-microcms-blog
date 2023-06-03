@@ -4,6 +4,9 @@ const nextConfig = withInterceptStdout(
   {
     reactStrictMode: true,
     swcMinify: true,
+    images: {
+      domains: ["images.microcms-assets.io"],
+    },
   },
   (text) => (text.includes("Duplicate atom key") ? "" : text)
 );
