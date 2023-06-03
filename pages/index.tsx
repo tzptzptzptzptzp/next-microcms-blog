@@ -1,8 +1,11 @@
 import { client } from '../libs/client'
 import type { Blog } from '../src/type/blog'
+
 import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
+
 import { KeyVisual } from '../src/components/keyvisual'
+import { BlogLists } from '../src/components/bloglists'
 
 // SSG
 export const getStaticProps = async () => {
@@ -14,22 +17,19 @@ export const getStaticProps = async () => {
   }
 }
 
-type Props = {
+type Blogs = {
   blogs: Blog[]
 }
 
-export default function Home({ blogs }: Props) {
+export default function Home({ blogs }: Blogs) {
   return (
     <div className='wrapper bg-bg text-text'>
       <Header></Header>
       <KeyVisual></KeyVisual>
-      {blogs.map((blog) => (
-        <div key={blog.id}>
-          <p>{blog.title}</p>
-          <div dangerouslySetInnerHTML={{ __html: `${blog.body}` }}></div>
-          <img src={blog.thumbnail.url} alt={blog.title} />
-        </div>
-      ))}
+      <BlogLists category='recipe' blogs={blogs}></BlogLists>
+      <BlogLists category='javascript' blogs={blogs}></BlogLists>
+      <BlogLists category='css' blogs={blogs}></BlogLists>
+      <BlogLists category='html' blogs={blogs}></BlogLists>
       <Footer></Footer>
     </div>
   )
