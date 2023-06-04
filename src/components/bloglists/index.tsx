@@ -37,6 +37,7 @@ export function BlogLists({ category, blogs }: Props) {
             </Link>
           ))}
         </div>
+        {blog.length == 0 ? <p className='py-16 text-4xl text-center'>まだ記事はありません。</p> : ''}
       </div>
     </section>
   )
