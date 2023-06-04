@@ -1,7 +1,7 @@
 export function PCNavigation() {
   return (
     <nav className="h-full block">
-      <ul className="flex gap-16 h-full">
+      <ul className="flex gap-16 h-full text-[2.5rem]">
         <li>
           <a href="#">トップ</a>
         </li>
