@@ -33,7 +33,7 @@ export function BlogLists({ category, blogs }: Props) {
         <div className='grid grid-cols-4 m:grid-cols-2 s:grid-cols-1 gap-8 s:gap-6'>
           {blog.map((blog) => (
             <Link key={blog.id} href={`/${blog.id}`}>
-              <Image src={blog.thumbnail.url} className='h-auto' width={370} height={210} alt={blog.title} />
+              <Image src={blog.thumbnail.url} className='w-full h-auto' width={370} height={210} alt={blog.title} />
             </Link>
           ))}
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export function Links() {
   return (
-    <div className="flex gap-4 ml-8 s:ml-0">
+    <div className="flex gap-4 ml-8 m:ml-0 s:ml-0">
       <a href="https://twitter.com/tetsuka_hiroki">
         <Image src="/img/links/icon_01.svg" className="w-auto" alt="twitter" width={20} height={20} />
       </a>
