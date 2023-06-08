@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-import { Blog } from '../../type/blog'
+import { Blog } from '../../../type/blog'
 
 interface Props {
   category: string

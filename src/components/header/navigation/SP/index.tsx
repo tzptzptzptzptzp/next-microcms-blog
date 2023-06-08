@@ -1,4 +1,4 @@
-import useCurrentPage from "../../../hooks/useCurrentPage"
+import useCurrentPage from "../../../../hooks/useCurrentPage"
 
 export function SPNavigation() {
   const currentPage = useCurrentPage();

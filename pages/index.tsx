@@ -5,7 +5,7 @@ import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
 
 import { KeyVisual } from '../src/components/keyvisual'
-import { BlogLists } from '../src/components/bloglists'
+import { BlogLists } from '../src/components/top/bloglists'
 
 // SSG
 export const getStaticProps = async () => {
