@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { useRecoilValue } from 'recoil'
-import { headerHeightState } from "../../states/headerHeightState"
+import { headerHeightState } from "../../../states/headerHeightState"
 
-import useDeviceType from "../../hooks/useDeviceType"
+import useDeviceType from "../../../hooks/useDeviceType"
 
 export function KeyVisual() {
   const { isMobile } = useDeviceType()

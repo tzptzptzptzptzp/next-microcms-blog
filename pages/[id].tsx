@@ -4,6 +4,7 @@ import type { Blog } from '../src/type/blog'
 
 import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
+import { KeyVisual } from '../src/components/blog/keyvisual'
 
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' })
@@ -37,6 +38,7 @@ export default function Blog({ blog }: Blogs) {
         <div>
           <h2>{blog.title}</h2>
           <p>{blog.body}</p>
+          <KeyVisual blog={blog}></KeyVisual>
         </div>
       </div>
       <Footer></Footer>
