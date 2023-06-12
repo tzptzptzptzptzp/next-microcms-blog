@@ -6,6 +6,7 @@ import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
 import { KeyVisual } from '../src/components/blog/keyvisual'
 import { Breadcrumb } from '../src/components/blog/breadcrumb'
+import { Share } from '../src/components/blog/share'
 
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' })
@@ -39,6 +40,7 @@ export default function Blog({ blog }: Blogs) {
         <div>
           <KeyVisual blog={blog}></KeyVisual>
           <Breadcrumb blog={blog}></Breadcrumb>
+          <Share blog={blog}></Share>
         </div>
       </div>
       <Footer></Footer>
