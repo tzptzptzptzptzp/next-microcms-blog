@@ -24,15 +24,15 @@ export function Breadcrumb({ blog }: Blogs) {
 
   return (
     <div className="mb-32 s:mb-16 px-8 s:px-6">
-      <div className="flex s:block w-full max-w-[1536px] m-auto text-4xl leading-tight">
+      <div className="flex s:block w-full max-w-[1536px] m-auto text-4xl s:text-[1.8rem] leading-tight">
         <Link href='/' className='h-circle'>
           トップ
         </Link>
-        <p className='px-4'>ー</p>
+        <p className='inline px-4'>ー</p>
         <Link href={`/#${category}`} className='h-circle'>
           {secTtl(category)}
         </Link>
-        <p className='px-4'>ー</p>
+        <p className='inline px-4'>ー</p>
         <br className='ll:hidden l:hidden' />
         <h1>{blog.title}</h1>
       </div>
