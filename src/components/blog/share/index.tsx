@@ -44,17 +44,17 @@ export function Share({ blog }: Blogs) {
   return (
     <div className="mb-32 s:mb-16 px-8 s:px-6">
       <div className="flex gap-8 justify-center m-auto text-bg text-[1.8rem]leading-tight">
-        <a className='flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#73C7FB]' href={`https://twiter.com/share?url=https://あれこれ.website/${url}&text=【${secTtl(blog.category[0])}】${blog.title}｜WEBのあれこれ`} rel="nofollow noopener" target="_blank">
+        <a className='h-share flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#73C7FB]' href={`https://twiter.com/share?url=https://あれこれ.website/${url}&text=【${secTtl(blog.category[0])}】${blog.title}｜WEBのあれこれ`} rel="nofollow noopener" target="_blank">
           <Image src='/img/links/share_twitter.svg' className='w-auto h-[18px]' style={{ transform: 'translateY(1px)' }} width={22} height={18} alt={blog.title} />
-          {isMobile ? null : 'ついったー'}
+          {isMobile ? null : <><span>つ</span><span>い</span><span>っ</span><span>た</span><span>ー</span></>}
         </a>
-        <a className='flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#768FC1]' href={`http://www.facebook.com/share.php?u=https://あれこれ.website/${url}`} rel="nofollow noopener" target="_blank">
+        <a className='h-share flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#768FC1]' href={`http://www.facebook.com/share.php?u=https://あれこれ.website/${url}`} rel="nofollow noopener" target="_blank">
           <Image src='/img/links/share_facebook.svg' className='w-auto h-[18px]' style={{ transform: 'translateY(1px)' }} width={22} height={18} alt={blog.title} />
-          {isMobile ? null : 'ふぇいすぶっく'}
+          {isMobile ? null : <><span>ふ</span><span>ぇ</span><span>い</span><span>す</span><span>ぶ</span><span>っ</span><span>く</span></>}
         </a>
-        <button className='flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#BBBBBB]' onClick={handleCopy}>
+        <button className='h-share flex items-center justify-center gap-1 w-[17.5rem] s:w-14 h-auto s:h-14 py-3 rounded-lg s:rounded-full bg-[#BBBBBB]' onClick={handleCopy}>
           <Image src='/img/links/share_link.svg' className='w-auto h-[18px]' style={{ transform: 'translateY(1px)' }} width={22} height={18} alt={blog.title} />
-          {isMobile ? null : 'りんくこぴー'}
+          {isMobile ? null : <><span>り</span><span>ん</span><span>く</span><span>こ</span><span>ぴ</span><span>ー</span></>}
         </button>
       </div>
     </div>

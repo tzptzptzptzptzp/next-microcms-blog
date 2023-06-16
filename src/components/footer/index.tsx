@@ -13,7 +13,7 @@ export function Footer() {
             <Image src="/img/icon.png" className="rounded-[5rem]" alt="テツカ ヒロキ" width={250} height={250} />
             <Profile></Profile>
           </div>
-          <Link href="/">
+          <Link href="/" className="h-scale">
             <Image src="/img/logo_white.svg" alt="WEBのあれこれ" width={300} height={60} />
           </Link>
         </div>
