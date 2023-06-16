@@ -20,10 +20,10 @@ export function SPNavigation() {
       </li>
     </ul>
   } else {
-    <div className="relative w-12 h-8">
-      <span className="absolute top-0 w-full h-[3.5px] rounded-full bg-text"></span>
-      <span className="absolute centering-y w-full h-[3.5px] rounded-full bg-text"></span>
-      <span className="absolute bottom-0 w-full h-[3.5px] rounded-full bg-text"></span>
+    content = <div className="relative w-12 h-8">
+      <span className="absolute top-0 w-full h-[4px] rounded-full bg-text"></span>
+      <span className="absolute centering-y w-full h-[4px] rounded-full bg-text"></span>
+      <span className="absolute bottom-0 w-full h-[4px] rounded-full bg-text"></span>
     </div>
   }
 
