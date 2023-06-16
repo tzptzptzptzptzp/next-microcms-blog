@@ -284,5 +284,8 @@ img {
   }
 }
 
+/*---------- CONTENT ----------*/
+@import url("content.css");
+
 /*---------- TAILWIND ----------*/
 @tailwind utilities;
