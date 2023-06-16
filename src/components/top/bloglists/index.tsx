@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image';
 
-import { Blog } from '../../type/blog'
+import { Blog } from '../../../type/blog'
 
 interface Props {
   category: string
@@ -32,7 +32,7 @@ export function BlogLists({ category, blogs }: Props) {
         </div>
         <div className='grid grid-cols-4 m:grid-cols-2 s:grid-cols-1 gap-8 s:gap-6'>
           {blog.map((blog) => (
-            <Link key={blog.id} href={`/${blog.id}`}>
+            <Link key={blog.id} href={`/${blog.id}`} className='h-scale'>
               <Image src={blog.thumbnail.url} className='w-full h-auto' width={370} height={210} alt={blog.title} />
             </Link>
           ))}

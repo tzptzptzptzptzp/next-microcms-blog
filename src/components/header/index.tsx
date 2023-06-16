@@ -1,7 +1,7 @@
 import React from 'react'
 import { Logo } from './Logo'
-import { PCNavigation } from '../navigation/PC'
-import { SPNavigation } from '../navigation/SP'
+import { PCNavigation } from './navigation/PC'
+import { SPNavigation } from './navigation/SP'
 
 import useDeviceType from '../../hooks/useDeviceType'
 import useElementHeight from '../../hooks/useElementHeight'

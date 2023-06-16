@@ -4,8 +4,8 @@ import type { Blog } from '../src/type/blog'
 import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
 
-import { KeyVisual } from '../src/components/keyvisual'
-import { BlogLists } from '../src/components/bloglists'
+import { KeyVisual } from '../src/components/top/keyvisual'
+import { BlogLists } from '../src/components/top/bloglists'
 
 // SSG
 export const getStaticProps = async () => {
