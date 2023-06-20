@@ -24,7 +24,7 @@ export function BlogLists({ category, blogs }: Props) {
   }
 
   return (
-    <section id={category} className={`${category === 'html' ? 'mb-40 s:mb-20' : 'mb-20 s:mb-6'} px-8 s:px-6`}>
+    <section id={category} className={`mt-[-10rem] s:mt-[-7rem] ${category === 'html' ? 'mb-40 s:mb-20' : 'mb-20 s:mb-6'} pt-40 s:pt-32 px-8 s:px-6`}>
       <div className='w-full max-w-[1536px] m-auto'>
         <div className='relative h-32 s:h-auto mb-20 s:mb-6'>
           <div className='absolute top-1/2 w-full h-4 s:h-2 bg-text'></div>
