@@ -72,14 +72,14 @@ export function SPNavigation() {
     content = <ul className="flex gap-8">
       <li onClick={decrementIndex} className='cursor-pointer'>
         <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M31 17L17 3" stroke="#301E1E" stroke-width="5.83333" stroke-linecap="round" />
-          <path d="M3 17L17 3.00001" stroke="#301E1E" stroke-width="5.83333" stroke-linecap="round" />
+          <path d="M31 17L17 3" stroke="#301E1E" strokeWidth="5.83333" strokeLinecap="round" />
+          <path d="M3 17L17 3.00001" stroke="#301E1E" strokeWidth="5.83333" strokeLinecap="round" />
         </svg>
       </li>
       <li onClick={incrementIndex} className='cursor-pointer'>
         <svg width="34" height="20" viewBox="0 0 34 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3 3L17 17" stroke="#301E1E" stroke-width="5.83333" stroke-linecap="round" />
-          <path d="M31 3L17 17" stroke="#301E1E" stroke-width="5.83333" stroke-linecap="round" />
+          <path d="M3 3L17 17" stroke="#301E1E" strokeWidth="5.83333" strokeLinecap="round" />
+          <path d="M31 3L17 17" stroke="#301E1E" strokeWidth="5.83333" strokeLinecap="round" />
         </svg>
       </li>
     </ul>
