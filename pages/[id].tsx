@@ -3,6 +3,7 @@ import { client } from '../libs/client'
 
 import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
+import { Menu } from '../src/components/menu'
 import { KeyVisual } from '../src/components/blog/keyvisual'
 import { Breadcrumb } from '../src/components/blog/breadcrumb'
 import { Share } from '../src/components/blog/share'
@@ -38,6 +39,7 @@ export default function Blog({ blog }: Blogs) {
   return (
     <div className='wrapper bg-bg text-text'>
       <Header position='fixed' bg='bg-bg'></Header>
+      <Menu></Menu>
       <div>
         <KeyVisual blog={blog}></KeyVisual>
         <Breadcrumb blog={blog}></Breadcrumb>
