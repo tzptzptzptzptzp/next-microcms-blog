@@ -1,6 +1,5 @@
 import { GetStaticPropsContext } from 'next'
 import { client } from '../libs/client'
-import type { Blog } from '../src/type/blog'
 
 import { Header } from '../src/components/header'
 import { Footer } from '../src/components/footer'
@@ -8,6 +7,8 @@ import { KeyVisual } from '../src/components/blog/keyvisual'
 import { Breadcrumb } from '../src/components/blog/breadcrumb'
 import { Share } from '../src/components/blog/share'
 import { Content } from '../src/components/blog/content'
+
+import type { Blog } from '../src/type/blog'
 
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' })
@@ -36,15 +37,13 @@ type Blogs = {
 export default function Blog({ blog }: Blogs) {
   return (
     <div className='wrapper bg-bg text-text'>
-      <Header></Header>
+      <Header position='fixed' bg='bg-bg'></Header>
       <div>
-        <div>
-          <KeyVisual blog={blog}></KeyVisual>
-          <Breadcrumb blog={blog}></Breadcrumb>
-          <Share blog={blog}></Share>
-          <Content blog={blog}></Content>
-          <Share blog={blog}></Share>
-        </div>
+        <KeyVisual blog={blog}></KeyVisual>
+        <Breadcrumb blog={blog}></Breadcrumb>
+        <Share blog={blog}></Share>
+        <Content blog={blog}></Content>
+        <Share blog={blog}></Share>
       </div>
       <Footer></Footer>
     </div>
