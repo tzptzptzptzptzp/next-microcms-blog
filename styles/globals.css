@@ -252,7 +252,9 @@ th {
 
 /*---------- BASE ----------*/
 html {
+  background-color: var(--bg-color);
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
