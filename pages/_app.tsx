@@ -8,7 +8,6 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <RecoilRoot>
         <Head>
-          <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet" />
         </Head>
         <Component {...pageProps} />
       </RecoilRoot>

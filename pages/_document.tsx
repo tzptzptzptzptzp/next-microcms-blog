@@ -6,6 +6,8 @@ class MyDocument extends Document {
     return (
       <Html lang='ja'>
         <Head>
+          <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@900&display=swap" rel="stylesheet" />
+
           <link rel="icon" type="image/png" sizes="16x16" href={`${faviconPath}/favicon-16x16.png`} />
           <link rel="icon" type="image/png" sizes="32x32" href={`${faviconPath}/favicon-32x32.png`} />
           <link rel="icon" type="image/png" sizes="192x192" href={`${faviconPath}/android-icon-192x192.png`} />
