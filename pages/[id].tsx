@@ -1,3 +1,4 @@
+import NextHeadSeo from 'next-head-seo'
 import { GetStaticPropsContext } from 'next'
 import { client } from '../libs/client'
 
@@ -37,17 +38,32 @@ type Blogs = {
 
 export default function Blog({ blog }: Blogs) {
   return (
-    <div className='wrapper bg-bg text-text'>
-      <Header position='fixed' bg='bg-bg'></Header>
-      <Menu></Menu>
-      <div>
-        <KeyVisual blog={blog}></KeyVisual>
-        <Breadcrumb blog={blog}></Breadcrumb>
-        <Share blog={blog}></Share>
-        <Content blog={blog}></Content>
-        <Share blog={blog}></Share>
+    <>
+      <NextHeadSeo
+        title={`${blog.title} | WEBのあれこれ`}
+        description='コピペで使えるJavaScriptレシピ(TypeScript対応)やよりサイト制作を行いやすくなるノウハウを発信中'
+        canonical={`https://xn--l8j8a4kb.website/${blog.id}`}
+        og={{
+          title: `${blog.title} | WEBのあれこれ`,
+          description: 'コピペで使えるJavaScriptレシピ(TypeScript対応)やよりサイト制作を行いやすくなるノウハウを発信中',
+          image: 'https://xn--l8j8a4kb.website/img/ogp.jpg',
+          type: 'website',
+          siteName: 'WEBのあれこれ'
+        }}
+        twitter={{ card: "summary_large_image" }}
+      />
+      <div className='wrapper bg-bg text-text'>
+        <Header position='fixed' bg='bg-bg'></Header>
+        <Menu></Menu>
+        <div>
+          <KeyVisual blog={blog}></KeyVisual>
+          <Breadcrumb blog={blog}></Breadcrumb>
+          <Share blog={blog}></Share>
+          <Content blog={blog}></Content>
+          <Share blog={blog}></Share>
+        </div>
+        <Footer></Footer>
       </div>
-      <Footer></Footer>
-    </div>
+    </>
   )
 }
