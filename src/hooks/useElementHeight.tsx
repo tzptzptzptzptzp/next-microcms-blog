@@ -1,33 +1,35 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react'
 import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil'
-import { headerHeightState } from '../states/headerHeightState';
+import { headerHeightState } from '../states/headerHeightState'
 
 const useElementHeight = (): [React.RefObject<HTMLElement>, number] => {
-  const elementRef = useRef<HTMLElement>(null);
-  const [elementHeight, setElementHeight] = useRecoilState(headerHeightState);
+  const elementRef = useRef<HTMLElement>(null)
+  const [elementHeight, setElementHeight] = useRecoilState(headerHeightState)
 
   useEffect(() => {
     const getElementHeight = () => {
-      if (elementRef.current) {
-        setElementHeight(elementRef.current.clientHeight);
+      const currentElement = elementRef.current
+      if (currentElement) {
+        setElementHeight(currentElement.clientHeight)
       }
-    };
+    }
+    getElementHeight()
 
-    getElementHeight(); // 初回レンダリング時に要素の高さを取得する
-
-    const resizeObserver = new ResizeObserver(getElementHeight);
-    if (elementRef.current) {
-      resizeObserver.observe(elementRef.current); // 要素のリサイズを監視する
+    const resizeObserver = new ResizeObserver(getElementHeight)
+    const observedElement = elementRef.current
+    if (observedElement) {
+      resizeObserver.observe(observedElement)
     }
 
     return () => {
-      if (elementRef.current) {
-        resizeObserver.unobserve(elementRef.current); // コンポーネントがアンマウントされたときに監視を停止する
+      const cleanupElement = observedElement
+      if (cleanupElement) {
+        resizeObserver.unobserve(cleanupElement)
       }
-    };
-  }, [elementRef]);
+    }
+  }, [elementRef, setElementHeight])
 
-  return [elementRef, elementHeight];
-};
+  return [elementRef, elementHeight]
+}
 
-export default useElementHeight;
+export default useElementHeight
