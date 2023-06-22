@@ -20,8 +20,8 @@ export function SPNavigation() {
   }, [menuOpen, setMenuOpen])
 
 
+  // 各セクションの位置を配列に追加
   useEffect(() => {
-    // 各セクションの位置を配列に追加
     const handleSectionDistances = () => {
       const sections = Array.from(document.querySelectorAll('section'))
       const distances = sections.map(section => {
@@ -31,18 +31,19 @@ export function SPNavigation() {
       setSectionDistances(distances)
     }
     handleSectionDistances()
+  }, [setSectionDistances])
 
-    // スクロール時に現在位置を取得しセクション管理番号を更新
+  // スクロール時に現在位置を取得しセクション管理番号を更新
+  useEffect(() => {
     const handleScroll = () => {
       const index = sectionDistances.findIndex((distance) => scrollY < (distance - 100))
       setSectionIndex(index !== -1 ? (index - 1) : (sectionDistances.length - 1))
     }
     addEventListener('scroll', handleScroll)
-
     return () => {
       removeEventListener('scroll', handleScroll)
     }
-  }, [sectionIndex])
+  }, [sectionDistances, setSectionIndex])
 
   // 下セクションへ移動ボタンクリック時の処理
   const incrementIndex = () => {
