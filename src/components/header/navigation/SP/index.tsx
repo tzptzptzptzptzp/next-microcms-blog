@@ -22,7 +22,7 @@ export function SPNavigation() {
   // 各セクションの位置を取得し配列に追加
   useEffect(() => {
     const handleSectionDistances = () => {
-      const sections = Array.from(document.querySelectorAll('section'))
+      const sections = Array.from(document.querySelectorAll('section, footer'))
       const distances = sections.map(section => {
         const rect = section.getBoundingClientRect()
         return rect.top + window.scrollY
