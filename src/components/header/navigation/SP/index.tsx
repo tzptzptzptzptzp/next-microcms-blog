@@ -19,8 +19,7 @@ export function SPNavigation() {
     setMenuOpen(!menuOpen)
   }, [menuOpen, setMenuOpen])
 
-
-  // 各セクションの位置を配列に追加
+  // 各セクションの位置を取得し配列に追加
   useEffect(() => {
     const handleSectionDistances = () => {
       const sections = Array.from(document.querySelectorAll('section'))
@@ -30,7 +29,9 @@ export function SPNavigation() {
       })
       setSectionDistances(distances)
     }
-    handleSectionDistances()
+    // DOMの描画が完了した後に位置の取得を実行
+    const timeoutId = setTimeout(handleSectionDistances, 0)
+    return () => clearTimeout(timeoutId)
   }, [setSectionDistances])
 
   // スクロール時に現在位置を取得しセクション管理番号を更新
@@ -43,7 +44,7 @@ export function SPNavigation() {
     return () => {
       removeEventListener('scroll', handleScroll)
     }
-  }, [sectionDistances, setSectionIndex])
+  }, [sectionIndex, sectionDistances])
 
   // 下セクションへ移動ボタンクリック時の処理
   const incrementIndex = () => {
@@ -68,7 +69,7 @@ export function SPNavigation() {
   }
 
   // ページに毎に表示するコンテンツを管理
-  let content;
+  let content
   if (currentPage === '' || currentPage === '/') {
     content = <ul className="flex gap-8">
       <li onClick={decrementIndex} className='cursor-pointer'>
