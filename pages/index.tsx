@@ -1,4 +1,5 @@
 import NextHeadSeo from 'next-head-seo'
+import Transition from '../src/utils/transition'
 import { client } from '../libs/client'
 
 import { Header } from '../src/components/header'
@@ -24,7 +25,7 @@ type Blogs = {
 
 export default function Home({ blogs }: Blogs) {
   return (
-    <>
+    <Transition>
       <NextHeadSeo
         title='WEBのあれこれ | WEBのGOODな情報を発信中！'
         description='コピペで使えるJavaScriptレシピ(TypeScript対応)やよりサイト制作を行いやすくなるノウハウを発信中'
@@ -47,6 +48,6 @@ export default function Home({ blogs }: Blogs) {
         <BlogLists category='html' blogs={blogs}></BlogLists>
         <Footer></Footer>
       </div>
-    </>
+    </Transition>
   )
 }

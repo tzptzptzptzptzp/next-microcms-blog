@@ -1,4 +1,5 @@
 import NextHeadSeo from 'next-head-seo'
+import Transition from '../src/utils/transition'
 import { GetStaticPropsContext } from 'next'
 import { client } from '../libs/client'
 
@@ -38,7 +39,7 @@ type Blogs = {
 
 export default function Blog({ blog }: Blogs) {
   return (
-    <>
+    <Transition>
       <NextHeadSeo
         title={`${blog.title} | WEBのあれこれ`}
         description='コピペで使えるJavaScriptレシピ(TypeScript対応)やよりサイト制作を行いやすくなるノウハウを発信中'
@@ -64,6 +65,6 @@ export default function Blog({ blog }: Blogs) {
         </div>
         <Footer></Footer>
       </div>
-    </>
+    </Transition>
   )
 }
