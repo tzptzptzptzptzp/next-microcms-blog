@@ -2,7 +2,7 @@
 
 ## 紹介
 
-こちらは自身が運営する、WEB に関する情報をまとめたブログ「[WEBのあれこれ](https://xn--l8j8a4kb.website/)」のソースコードです。下記の技術を用いて制作を行いました。
+こちらは自身が運営する、WEB に関する情報をまとめたブログ「[WEB のあれこれ](https://xn--l8j8a4kb.website/)」のソースコードです。下記の技術を用いて制作を行いました。
 
 ## デザイン
 
@@ -10,12 +10,20 @@
 
 ## 使用技術
 
+フロントエンド
+
 - [React](https://ja.reactjs.org/)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [tailwindcss](https://tailwindcss.com/)
-- [microCMS](https://microcms.io/)
 - [Recoil](https://recoiljs.org/)
+
+バックエンド
+
+- [microCMS](https://microcms.io/)　投稿データ
+- [PHP](https://www.php.net/)　コメントデータ
+
+PHP の API は[こちら](https://github.com/tzptzptzptzptzp/php-api)をご参照ください。
 
 ## 開発手順
 

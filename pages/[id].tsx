@@ -12,6 +12,8 @@ import { Share } from '../src/components/blog/share'
 import { Content } from '../src/components/blog/content'
 
 import type { Blog } from '../src/type/blog'
+import { Comments } from '../src/components/blog/comments'
+import { useEffect, useState } from 'react'
 
 export const getStaticPaths = async () => {
   const data = await client.get({ endpoint: 'blog' })
@@ -26,10 +28,12 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context: GetStaticPropsContext) => {
   const id = context.params?.id
   const blog = await client.get({ endpoint: 'blog', contentId: `${id}` })
+
   return {
     props: {
       blog: blog || null,
-    }
+    },
+    revalidate: 60,
   }
 }
 
@@ -38,6 +42,21 @@ type Blogs = {
 }
 
 export default function Blog({ blog }: Blogs) {
+  const [comments, setComments] = useState(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://tzp.pink/arekore-api/api/read/?postId=${blog.id}`)
+        const jsonData = await response.json()
+        setComments(jsonData)
+      } catch (err) {
+        console.error('Error fetching data:', err)
+      }
+    }
+    fetchData()
+  }, [])
+
   return (
     <Transition>
       <NextHeadSeo
@@ -62,6 +81,7 @@ export default function Blog({ blog }: Blogs) {
           <Share blog={blog}></Share>
           <Content blog={blog}></Content>
           <Share blog={blog}></Share>
+          <Comments blog={blog} comments={comments}></Comments>
         </div>
         <Footer></Footer>
       </div>
