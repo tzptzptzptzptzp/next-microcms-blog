@@ -38,8 +38,6 @@ npm run build && npm start // 本番確認用
 
 ---
 
-[![WEB のあれこれ](https://xn--l8j8a4kb.website/img/ogp.jpg)](https://xn--l8j8a4kb.website/)
-
 ## Introduction
 
 This is the source code for the blog "[WEB のあれこれ](https://xn--l8j8a4kb.website/),"  
